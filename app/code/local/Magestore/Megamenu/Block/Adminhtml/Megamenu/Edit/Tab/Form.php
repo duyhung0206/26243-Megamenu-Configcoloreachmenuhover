@@ -54,6 +54,18 @@ class Magestore_Megamenu_Block_Adminhtml_Megamenu_Edit_Tab_Form extends Mage_Adm
             'name'        => 'item_icon',
             'note'  => '<small>Supported file types: .jpeg, .jpg, .gif, .png</small><br>15 x 15 px is recommended'
         ));
+
+        $fieldset->addField('color_hover','text',array(
+                'label' => Mage::helper('megamenu')->__('Color hover'),
+                'required' => false,
+                'name' => 'color_hover',
+                'class' => 'color input-text',
+                'value' => 'color_hover',
+                'note' => 'Background color when customers hover or click. <br/>Only with top menu'
+            )
+        );
+
+        
          $fieldset->addField('megamenu_type', 'select', array(
             'label'        => Mage::helper('megamenu')->__('Menu Type'),
             'name'        => 'megamenu_type',

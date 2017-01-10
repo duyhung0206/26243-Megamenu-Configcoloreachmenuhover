@@ -17,6 +17,14 @@ $align = Mage::getStoreConfig('megamenu/top_menu/topmenu_align',$this->getStoreI
     <li  class="anchor_mbmenu col-xs-12 text-right"><a  class="anchor_mbmenu_text  glyphicon glyphicon-align-justify">&nbsp;</a></li>
     <?php endif;?>
     <?php foreach($items as $item):?>
+        <style>
+            .ms-topmenu .ms-level0.nav-<?php echo $item->getId(); ?>.active .ms-label,
+            .ms-topmenu .ms-level0.nav-<?php echo $item->getId(); ?>:hover .ms-label,
+            .ms-topmenu .ms-level0.nav-<?php echo $item->getId(); ?>:active .ms-label,
+            .ms-topmenu .ms-level0.nav-<?php echo $item->getId(); ?>:focus .ms-label{
+                background-color: #<?php echo $item->getData('color_hover')?>
+            }
+        </style>
         <li class="ms-level0 nav-<?php echo $item->getId(); ?>" id="nav-<?php echo $item->getId(); ?>">
             <a class="ms-label <?php if($item->getMenuType() == Magestore_Megamenu_Model_Megamenu::ANCHOR_TEXT): ?>anchor_text<?php endif;?>" <?php if($item->getLink()):?> href="<?php echo $item->getLink();?>"<?php endif; ?>>
                 <?php if($item->getItemIcon()&& $align != 1):?><img alt="<?php echo $item->getNameMenu() ?>" class="ms-iconmega" draggable="false" src="<?php echo Mage::getBaseUrl('media')  . '/' . $item->getItemIcon() ?>"/>&nbsp;<?php endif; ?>
