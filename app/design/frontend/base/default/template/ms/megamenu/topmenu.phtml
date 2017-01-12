@@ -18,6 +18,9 @@ $align = Mage::getStoreConfig('megamenu/top_menu/topmenu_align',$this->getStoreI
     <?php endif;?>
     <?php foreach($items as $item):?>
         <style>
+            .ms-topmenu .ms-level0.nav-<?php echo $item->getId(); ?>{
+                background-color: #<?php echo $item->getData('tab_color')?>
+            }
             .ms-topmenu .ms-level0.nav-<?php echo $item->getId(); ?>.active .ms-label,
             .ms-topmenu .ms-level0.nav-<?php echo $item->getId(); ?>:hover .ms-label,
             .ms-topmenu .ms-level0.nav-<?php echo $item->getId(); ?>:active .ms-label,

@@ -64,7 +64,15 @@ class Magestore_Megamenu_Block_Adminhtml_Megamenu_Edit_Tab_Form extends Mage_Adm
                 'note' => 'Background color when customers hover or click. <br/>Only with top menu'
             )
         );
-
+        $fieldset->addField('tab_color','text',array(
+                'label' => Mage::helper('megamenu')->__('Tab color'),
+                'required' => false,
+                'name' => 'tab_color',
+                'class' => 'color input-text',
+                'value' => 'tab_color',
+                'note' => 'Only with top menu'
+            )
+        );
         
          $fieldset->addField('megamenu_type', 'select', array(
             'label'        => Mage::helper('megamenu')->__('Menu Type'),
